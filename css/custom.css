@@ -7,6 +7,7 @@ DEV UTILITIES
 */
 
 .bdred { border: 1px solid red; }
+.m-lowercase { text-transform: lowercase; }
 
 /* 
 ==========================================================================
@@ -29,6 +30,8 @@ p {
 
 .light { font-family: 'Raleway', sans-serif; font-size: 18px; }
 
+.content-section { padding: 80px 0px 50px; }
+
 /* 
 ==========================================================================
 INTRO
@@ -42,6 +45,11 @@ INTRO
 
 .intro .intro-text {
 	color:#e7e7e7;
+	font-weight: 200;
+	font-size: 30px;
+    color: rgb(255, 202, 0);
+    font-family: 'Raleway';
+    letter-spacing: 1px;
 }
 
 /*
@@ -117,12 +125,21 @@ ABOUT SECTION
 SKILLS SECTION
 ========================================================================== 
 */
-
+#skills { background-color: #efefef; }
 /* 
 ==========================================================================
 WORK SECTION 
 ========================================================================== 
 */
+
+#portfolio { background-color: rgb(58, 45, 29);}
+.portfolio-item { margin-bottom: 120px; }
+.section-intro { margin-bottom: 60px;border-bottom: 1px solid burlywood; }
+#portfolio .section-intro p { color:#e7e7e7; }
+#portfolio .section-title { color: burlywood; }
+
+.portfolio-item p { font-size: 18px;color:#f7f7f7; }
+.portfolio-item h3 a { font-size: 22px;color:burlywood; }
 
 /* 
 ==========================================================================
@@ -130,10 +147,17 @@ CONTACT SECTION
 ========================================================================== 
 */
 
+
 #contact { padding-bottom: 70px; }
 
+/* 
+==========================================================================
+FOOTER SECTION 
+========================================================================== 
+*/
+
 footer { background-color: rgb(68, 68, 68); }
-.footer-content p { color: #9c9c9c;font-size: 13px;letter-spacing: 1px; }
+.footer-content p { color: #9c9c9c;font-size: 13px;font-family:'Raleway';letter-spacing: 1px; }
 
 
 /* 
@@ -145,10 +169,14 @@ MEDIA QUERIES
 @media (min-width: 768px) {
 	.intro {
 		height: 100%;
-		padding: 160px 0px;
+		padding: 185px 0px;
 	}
 	.intro .intro-body .brand-heading {
 	    font-size: 50px;
+	}
+	.navbar-custom.top-nav-collapse {
+	    background: rgba(0, 0, 0, 0.5);
+	    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	}
 }
 
