@@ -27,7 +27,6 @@ body {
     text-transform: uppercase;
     /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     font-family: 'Titillium Web';
-    background-color: transparent;
 }
 .navbar-custom .nav li a { color: rgba(255, 255, 255, 0.8);border-bottom: 1px solid transparent; }
 .navbar-custom .nav li a:hover {
@@ -209,6 +208,7 @@ MEDIA QUERIES
 		font-size: 28px;
 	
 	}	
+	.navbar-custom { background-color: transparent; }
 	.navbar-custom.top-nav-collapse {
 	    /*background: rgba(0, 0, 0, 0.5);*/
 	    background: rgba(1, 15, 29, 0.81);
