@@ -74,7 +74,7 @@ INTRO
 .intro .intro-body .intro-text {
 	color: rgba(210, 255, 255, 0.91);
     font-weight: 100;
-    font-size: 24px;
+    font-size: 18px;
     /* color: #efefef; */
     font-family: 'Open Sans Condensed';
     letter-spacing: 1px;
@@ -205,6 +205,10 @@ MEDIA QUERIES
 	    font-size: 70px;
 	    color:#fff;
 	}
+	.intro .intro-body .intro-text {
+		font-size: 28px;
+	
+	}	
 	.navbar-custom.top-nav-collapse {
 	    /*background: rgba(0, 0, 0, 0.5);*/
 	    background: rgba(1, 15, 29, 0.81);
