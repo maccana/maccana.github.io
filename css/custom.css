@@ -20,7 +20,25 @@ body {
 	font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
 }
 
-h1,h2,h3,h4,h5 { color: #333; font-family: 'Raleway', sans-serif; }
+
+.navbar-custom {
+    margin-bottom: 0;
+    /*border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
+    text-transform: uppercase;
+    /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: 'Titillium Web';
+    background-color: transparent;
+}
+.navbar-custom .nav li a { color: rgba(255, 255, 255, 0.8);border-bottom: 1px solid transparent; }
+.navbar-custom .nav li a:hover {
+    color: #fff;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(227, 255, 120);
+}
+
+
+h1,h2,h3,h4,h5 { color: #333; font-family: 'Titillium Web', sans-serif; }
 
 p { 
 	/* opacity: 0.7;*/ 
@@ -28,9 +46,18 @@ p {
 	font-family: 'Slabo 27px', serif;
 }
 
-.light { font-family: 'Raleway', sans-serif; font-size: 18px; }
+.light { font-family: 'Titillium Web', sans-serif;, sans-serif; font-size: 18px; }
+.white { color: white; }
+.green { color:rgb(227, 255, 120); }
 
-.content-section { padding: 80px 0px 80px; }
+.fa-code { color:#ff8c00; }
+
+.content-section { padding: 140px 0px 90px; }
+.content-section p { text-align: justify; font-family: 'Open Sans Condensed'; letter-spacing: .3px; }
+
+
+.section-title { border-bottom: 3px solid #ff8c00; display: inline-block;
+padding-bottom: 6px; }
 
 /* 
 ==========================================================================
@@ -41,15 +68,16 @@ INTRO
 .intro {
 	background: url('../img/banner-main-large4.jpg') no-repeat bottom center scroll;
 }
-.intro h1 { color:#f7f7f7; }
+.intro h1 { color:#f7f7f7; font-family: 'Titillium Web'; font-weight:normal }
 
-.intro .intro-text {
-	color:#e7e7e7;
-	font-weight: 200;
-	font-size: 30px;
-    color: rgb(255, 202, 0);
-    font-family: 'Raleway';
+.intro .intro-body .intro-text {
+	color: rgba(210, 255, 255, 0.91);
+    font-weight: 100;
+    font-size: 24px;
+    /* color: #efefef; */
+    font-family: 'Open Sans Condensed';
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /*
@@ -114,6 +142,7 @@ INTRO
   z-index: 0;
 }*/
 
+
 /* 
 ==========================================================================
 ABOUT SECTION
@@ -128,18 +157,18 @@ SKILLS SECTION
 #skills { background-color: #efefef; }
 /* 
 ==========================================================================
-WORK SECTION 
+PORTFOLIO SECTION 
 ========================================================================== 
 */
 
-#portfolio { background-color: rgb(58, 45, 29);}
+#portfolio { background-color: #FFF; }
 .portfolio-item { margin-bottom: 120px; }
-.section-intro { margin-bottom: 60px;border-bottom: 1px solid burlywood; }
-#portfolio .section-intro p { color:#e7e7e7; }
-#portfolio .section-title { color: burlywood; }
+.section-intro { margin-bottom: 60px;/*border-bottom: 1px solid burlywood; */}
+#portfolio .section-intro p { color:#888585; }
+#portfolio .section-title { color:; }
 
-.portfolio-item p { font-size: 18px;color:#f7f7f7; }
-.portfolio-item h3 a { font-size: 22px;color:burlywood; }
+.portfolio-item p { font-size: 18px;color:#888585; }
+.portfolio-item h3 a { font-size: 22px; }
 
 /* 
 ==========================================================================
@@ -148,7 +177,7 @@ CONTACT SECTION
 */
 
 
-#contact { padding-bottom: 70px; }
+#contact { padding-bottom: 70px; background-color: #efefef; }
 
 /* 
 ==========================================================================
@@ -169,15 +198,18 @@ MEDIA QUERIES
 @media (min-width: 768px) {
 	.intro {
 		height: 100%;
-		padding: 185px 0px;
+		padding: 170px 0px;
 	}
 	.intro .intro-body .brand-heading {
-	    font-size: 50px;
+	    font-size: 70px;
+	    color:#fff;
 	}
 	.navbar-custom.top-nav-collapse {
-	    background: rgba(0, 0, 0, 0.5);
+	    /*background: rgba(0, 0, 0, 0.5);*/
+	    background: rgba(1, 15, 29, 0.81);
 	    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	}
+	.navbar-custom.top-nav-collapse li a { color:#fff; }
 }
 
 @media (min-width: 767px)
