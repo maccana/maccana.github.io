@@ -67,6 +67,7 @@ INTRO
 
 .intro {
 	background: url('../img/banner-main-large4.jpg') no-repeat bottom center scroll;
+	padding: 145px 0px;
 }
 .intro h1 { color:#f7f7f7; font-family: 'Titillium Web'; font-weight:normal }
 
