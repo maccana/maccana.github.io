@@ -1,5 +1,6 @@
 /* Custom CSS styling for Grayscale bootstrap theme */
 
+/* Mobile First */
 /* 
 ==========================================================================
 DEV UTILITIES
@@ -78,6 +79,9 @@ p {
 .section-title { border-bottom: 3px solid #ff8c00; display: inline-block;
 padding-bottom: 6px; }
 
+.mchevron-container { padding-bottom: 20px;  }
+.mchevron-up { font-size: 26px; color: cadetblue; }
+.mchevron-up-text { color:cadetblue;margin-top: 0px }
 
 /* 
 ==========================================================================
@@ -208,7 +212,7 @@ FOOTER SECTION
 ========================================================================== 
 */
 
-footer { background-color: rgb(68, 68, 68); text-align: center }
+footer { background-color: #242d32;/*rgb(68, 68, 68); */text-align: center }
 .footer-content p { color: #9c9c9c;font-size: 14px;font-family:'Raleway';letter-spacing: 1px; }
 
 .mfooter-media-btn {
