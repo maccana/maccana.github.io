@@ -45,18 +45,19 @@ p {
 	font-family: 'Slabo 27px', serif;
 }
 
-.light { font-family: 'Titillium Web', sans-serif;, sans-serif; font-size: 18px; }
+.light { font-family: 'Titillium Web', sans-serif; font-size: 16px; }
 .white { color: white; }
 .green { color:rgb(227, 255, 120); }
 
 .fa-code { color:#ff8c00; }
 
 .content-section { padding: 140px 0px 90px; }
-.content-section p { text-align: justify; font-family: 'Open Sans Condensed'; letter-spacing: .3px; }
+.content-section p { text-align: center; font-family: 'Open Sans Condensed'; letter-spacing: .3px; }
 
 
 .section-title { border-bottom: 3px solid #ff8c00; display: inline-block;
 padding-bottom: 6px; }
+
 
 /* 
 ==========================================================================
@@ -177,7 +178,7 @@ CONTACT SECTION
 */
 
 
-#contact { padding-bottom: 70px; background-color: #efefef; }
+#contact { padding-bottom: 70px; background-color: #efefef; text-align: center; }
 
 /* 
 ==========================================================================
@@ -185,8 +186,19 @@ FOOTER SECTION
 ========================================================================== 
 */
 
-footer { background-color: rgb(68, 68, 68); }
-.footer-content p { color: #9c9c9c;font-size: 13px;font-family:'Raleway';letter-spacing: 1px; }
+footer { background-color: rgb(68, 68, 68); text-align: center }
+.footer-content p { color: #9c9c9c;font-size: 14px;font-family:'Raleway';letter-spacing: 1px; }
+
+.mfooter-media-btn {
+	font-size: 38px;
+	
+	
+}
+.footer ul li { display: inline; border-bottom: 1px solid blue}
+.footer ul { 
+	text-align: center;
+}
+.btn-default { border: none;color:grey; }
 
 
 /* 
@@ -195,7 +207,11 @@ MEDIA QUERIES
 ========================================================================== 
 */
 
+
 @media (min-width: 768px) {
+
+	.light { font-family: 'Titillium Web', sans-serif; font-size: 18px; }
+
 	.intro {
 		height: 100%;
 		padding: 170px 0px;
@@ -208,6 +224,7 @@ MEDIA QUERIES
 		font-size: 28px;
 	
 	}	
+
 	.navbar-custom { background-color: transparent; }
 	.navbar-custom.top-nav-collapse {
 	    /*background: rgba(0, 0, 0, 0.5);*/
@@ -215,7 +232,19 @@ MEDIA QUERIES
 	    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	}
 	.navbar-custom.top-nav-collapse li a { color:#fff; }
-}
+
+	.footer-content p { font-size: 16px; }
+	.btn-default { 
+		color: #949e9a; 
+		border: none;
+		/*border: 1px solid #1b6549;*/ 
+	}
+	.btn-default:hover, .btn-default:focus {
+	    border: 0px solid #42DCA3; 
+	    outline: none;
+	    color: #7cd25a;
+	    background-color: transparent;
+	}
 
 @media (min-width: 767px)
 	.content-section {
