@@ -60,7 +60,7 @@ body {
 h1,h2,h3,h4,h5 { color: #333333; /*font-family: 'Titillium Web'*/font-family: 'Lato', sans-serif;font-weight: 300; }
 
 p { 
-	font-size: 20px;
+	font-size: 18px;
 	color:#333333;
 	font-family: 'Open Sans Condensed', serif;
 
@@ -72,12 +72,22 @@ p {
 .green { color:rgb(227, 255, 120); }
 .fa-code { color:#ff8c00; }
 
-.content-section { padding: 120px 0px 90px; }
-.content-section p { text-align: center; font-family: 'Open Sans Condensed'; letter-spacing: .3px; }
+.content-section { padding: 100px 0px 90px; }
+/*.content-section p { text-align: center; font-family: 'Open Sans Condensed'; letter-spacing: .3px; }*/
 
 
-.section-title { border-bottom: 3px solid #ff8c00; display: inline-block;
-padding-bottom: 6px; }
+.section-title { border-bottom: 0px solid #ff8c00; display: inline-block;
+padding-bottom: 0px; }
+
+hr {
+	margin-top: -15px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid rgba(173, 147, 147, 0.64);
+}
+hr.small {
+    max-width: 100px;
+}
 
 .mchevron-container { padding-bottom: 20px;  }
 .mchevron-up { font-size: 26px; color: cadetblue; }
@@ -188,14 +198,38 @@ PORTFOLIO SECTION
 ========================================================================== 
 */
 
-#portfolio { background-color: #FFF; }
-.portfolio-item { margin-bottom: 120px; }
-.section-intro { margin-bottom: 60px;/*border-bottom: 1px solid burlywood; */}
-#portfolio .section-intro p { color:#888585; }
+#portfolio { background-color: #eee; }
+.portfolio-item { margin-bottom: 20px; position: relative; width:100%; }
+.section-intro { margin-bottom: 30px;/*border-bottom: 1px solid burlywood; */}
+#portfolio .section-intro p { color:#f7f7f7; }
 #portfolio .section-title { color:; }
 
-.portfolio-item p { font-size: 18px;color:#888585; }
-.portfolio-item h3 a { font-size: 22px; }
+.portfolio-item .caption { 
+	font-size: 18px;
+	color:#888585;
+	position: absolute; 
+	top:0;
+	left:0;
+	bottom:0;
+	background-color: #456155;
+	opacity:.7;
+	margin: 0px 15px 0px 0px; 
+	padding:10px; 
+}
+.caption .fa .fa-plus-circle { 
+	color: #fff; 
+	bottom: 0;
+    position: absolute;
+    margin-bottom: 20px; 
+}
+.portfolio-item h3 a { font-size: 18px;color: rgb(227, 255, 120); }
+
+.portfolio-item .text { font-color:#333; }
+
+.portfolio-item .tools-list li { list-style: none;display: inline-block;margin-right: 10px; }
+
+
+
 
 /* 
 ==========================================================================
@@ -272,9 +306,18 @@ MEDIA QUERIES
 	    background-color: transparent;
 	}
 
-@media (min-width: 767px)
+	.portfolio-item .caption { 
+		width:100%; 
+	}
+
+	.modal-open .modal {
+	    margin-top: 100px;
+	}
+}
+@media (min-width: 767px) {
 	.content-section {
 	    padding-top: 140px;
 	    padding-bottom: 100px;
 	}
 }
+
