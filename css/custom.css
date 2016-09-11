@@ -306,7 +306,7 @@ MEDIA QUERIES
 		color:#888585;
 		position: absolute;
 		top:-100%; 
-		
+		background-color: #000;
 		opacity:.7;
 		margin: 0px 0px 0px 0px; 
 		padding:22px; 
