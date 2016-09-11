@@ -56,7 +56,6 @@ body {
 
 }
 
-
 h1,h2,h3,h4,h5 { color: #333333; /*font-family: 'Titillium Web'*/font-family: 'Lato', sans-serif;font-weight: 300; }
 
 p { 
@@ -191,7 +190,7 @@ ABOUT SECTION
 SKILLS SECTION
 ========================================================================== 
 */
-#skills { background-color: #efefef; }
+#skills { background-color: #e6e4e4; }
 /* 
 ==========================================================================
 PORTFOLIO SECTION 
@@ -199,7 +198,7 @@ PORTFOLIO SECTION
 */
 
 #portfolio { background-color: #eee; }
-.portfolio-item { margin-bottom: 20px; position: relative; width:100%; }
+.portfolio-item { margin-bottom: 20px; position: relative; width:100%;/*position: relative;*/ }
 .section-intro { margin-bottom: 30px;/*border-bottom: 1px solid burlywood; */}
 #portfolio .section-intro p { color:#f7f7f7; }
 #portfolio .section-title { color:; }
@@ -207,14 +206,15 @@ PORTFOLIO SECTION
 .portfolio-item .caption { 
 	font-size: 18px;
 	color:#888585;
-	position: absolute; 
+	position: absolute; /* make caption fill portfolio item */
 	top:0;
 	left:0;
 	bottom:0;
 	background-color: #456155;
 	opacity:.7;
-	margin: 0px 15px 0px 0px; 
+	margin: 0px 0px 0px 0px; 
 	padding:10px; 
+	width: 100%;
 }
 .caption .fa .fa-plus-circle { 
 	color: #fff; 
@@ -229,14 +229,11 @@ PORTFOLIO SECTION
 .portfolio-item .tools-list li { list-style: none;display: inline-block;margin-right: 10px; }
 
 
-
-
 /* 
 ==========================================================================
 CONTACT SECTION 
 ========================================================================== 
 */
-
 
 #contact { padding-bottom: 0px; background-color: #efefef; text-align: center; }
 
@@ -255,9 +252,7 @@ footer { background-color: #242d32;/*rgb(68, 68, 68); */text-align: center }
 	
 }
 .footer ul li { display: inline; border-bottom: 1px solid blue}
-.footer ul { 
-	text-align: center;
-}
+.footer ul { text-align: center; }
 .btn-default { border: none;color:grey; }
 
 
@@ -268,7 +263,7 @@ MEDIA QUERIES
 */
 
 @media (min-width: 768px) {
-
+	/* branding in nav */
 	.light { font-family: 'Titillium Web', sans-serif; font-size: 18px; }
 
 	.intro {
@@ -307,7 +302,8 @@ MEDIA QUERIES
 	}
 
 	.portfolio-item .caption { 
-		width:100%; 
+		/*width:100%; */
+		padding:22px;
 	}
 
 	.modal-open .modal {
