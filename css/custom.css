@@ -10,6 +10,10 @@ DEV UTILITIES
 .bdred { border: 1px solid red; }
 .m-lowercase { text-transform: lowercase; }
 
+/* positioning */
+.abs { position: absolute; }
+.rel { position: relative; }
+
 /* 
 ==========================================================================
 GLOBAL STYLES
@@ -27,14 +31,20 @@ body {
     /*border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
     text-transform: uppercase;
     /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-    font-family: 'Titillium Web';
+    /*font-family: 'Titillium Web';*/
 }
-.navbar-custom .nav li a { color: rgba(255, 255, 255, 0.8);border-bottom: 1px solid transparent; }
+.navbar-custom .nav li a { 
+	color: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid transparent; 
+
+	/*font-family: 'Noto Sans', sans-serif;*/
+	font-size:12px;
+}
 .navbar-custom .nav li a:hover {
     color: #fff;
     outline: none;
     background-color: transparent;
-    border-bottom: 1px solid rgb(227, 255, 120);
+    /*border-bottom: 1px solid rgb(227, 255, 120); */
 }
 
 .navbar-nav {
@@ -60,23 +70,27 @@ h1,h2,h3,h4,h5 { color: #333333; /*font-family: 'Titillium Web'*/font-family: 'L
 
 p { 
 	font-size: 18px;
-	color:#333333;
-	font-family: 'Open Sans Condensed', serif;
-
+	color:#737373;
+	/*font-family: 'Open Sans Condensed', serif;*/
+	font-family: georgia;
 }
 
 /* Navbar Branding */
 .light { font-family: 'Titillium Web', sans-serif; font-size: 16px; }
 .white { color: white; }
-.green { color:rgb(227, 255, 120); }
+.green { color:rgb(227, 255, 120);  }
 .fa-code { color:#ff8c00; }
 
 .content-section { padding: 100px 0px 90px; }
 /*.content-section p { text-align: center; font-family: 'Open Sans Condensed'; letter-spacing: .3px; }*/
 
 
-.section-title { border-bottom: 0px solid #ff8c00; display: inline-block;
-padding-bottom: 0px; }
+.section-title { 
+	border-bottom: 0px solid #ff8c00; 
+	display: inline-block;
+	padding-bottom: 0px;
+
+}
 
 hr {
 	margin-top: -15px;
@@ -98,15 +112,25 @@ INTRO
 ========================================================================== 
 */
 
+header { background:  url('../img/banner-main-large4.jpg') no-repeat bottom center; 
+z-index: 100;position: relative;text-align: center;
+}
+
 .intro {
-	background: url('../img/banner-main-large4.jpg') no-repeat bottom center scroll;
+	
 	/*padding: 145px 0px;*/
 	min-height: 100vh;
+	/*position: relative;*/
+	
+	
 }
-.intro h1 { color:#f7f7f7; font-family: 'Lato', sans-serif;font-weight:300; }
-.intro .intro-body .brand-heading { font-size: 48px; }
 
-.intro .intro-body .intro-text {
+.intro h1 { color:#f7f7f7; font-family: 'Lato', sans-serif;font-weight:300; }
+.intro .intro-body .brand-heading { font-size: 48px;z-index: 100;
+	
+ }
+
+.intro .intro-body .intro-text, .brand-heading  {
 	color: rgba(218, 255, 252, 0.91);
     font-weight: 100;
     font-size: 22px;
@@ -114,7 +138,25 @@ INTRO
     font-family: 'Open Sans Condensed';
     letter-spacing: 1px;
     text-transform: uppercase;
+
+    width: 100%;
+	
+	/*position: absolute;*/
+	/*z-index: 100000;*/
+  
+ 
 }
+
+
+
+.intro-color-overlay { background: #b1b6c3; opacity: .8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1
+ }
 
 /*
 * Find a fix to create blurred background image behind clear text with CSS
@@ -185,6 +227,13 @@ ABOUT SECTION
 ========================================================================== 
 */
 
+#about { background-color: rgba(168, 172, 175, 0);
+
+}
+#about .section-title {  color:#508288; }
+#about p { color: #4d5a82; font-family: 'Georgia', sans-serif;
+font-size:large;
+line-height: 30px }
 /* 
 ==========================================================================
 SKILLS SECTION
@@ -201,7 +250,7 @@ PORTFOLIO SECTION
 .portfolio-item { margin-bottom: 20px; position: relative; width:100%;/*position: relative;*/ }
 .section-intro { margin-bottom: 30px;/*border-bottom: 1px solid burlywood; */}
 #portfolio .section-intro p { color:#f7f7f7; }
-#portfolio .section-title { color:; }
+#portfolio .section-title { color:rgba(147, 39, 160, 0.67); }
 
 .portfolio-item .caption { 
 	position: absolute;
@@ -235,6 +284,8 @@ CONTACT SECTION
 */
 
 #contact { padding-bottom: 0px; background-color: #efefef; text-align: center; }
+#contact .section-title { color: #00a6a9; }
+#contact a { color: #8364bf; }
 
 /* 
 ==========================================================================
@@ -242,17 +293,19 @@ FOOTER SECTION
 ========================================================================== 
 */
 
-footer { background-color: #242d32;/*rgb(68, 68, 68); */text-align: center }
+footer { background-color: #e4e4e4;
+	/*#242d32;*/
+	/*rgb(68, 68, 68); */text-align: center }
 .footer-content p { color: #9c9c9c;font-size: 14px;font-family:'Raleway';letter-spacing: 1px; }
 
 .mfooter-media-btn {
 	font-size: 38px;
-	
-	
 }
 .footer ul li { display: inline; border-bottom: 1px solid blue}
 .footer ul { text-align: center; }
 .btn-default { border: none;color:grey; }
+
+
 
 
 /* 
@@ -282,7 +335,7 @@ MEDIA QUERIES
 	.navbar-custom { background-color: transparent; }
 	.navbar-custom.top-nav-collapse {
 	    /*background: rgba(0, 0, 0, 0.5);*/
-	    background: rgba(11, 36, 62, 0.81);
+	   background-color: rgba(11, 36, 62, 0.81);
 	    border-bottom: 0px solid rgba(255, 255, 255, 0.2);
 	}
 	.navbar-custom.top-nav-collapse li a { color:#fff; }
@@ -298,6 +351,10 @@ MEDIA QUERIES
 	    outline: none;
 	    color: #7cd25a;
 	    background-color: transparent;
+	}
+
+	.section-title { 
+		font-size: 45px; 
 	}
 
 	.portfolio-item { overflow: hidden; }
