@@ -31,31 +31,14 @@ body {
     text-transform: uppercase;
     /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     /*font-family: 'Titillium Web';*/
-		background-color: rgba(0, 0, 0, 0.42);
+		background-color: rgba(48, 50, 60, 0.79);
 }
-
-/* mm Styles for mobile drop down menu */
-.container>.navbar-collapse>.navbar-nav {
-    margin: 0.5px -15px;
-}
-.container>.navbar-collapse>.nav>li {
-    border-bottom: 1px solid lightgrey;
-}
-.container>.navbar-collapse {
-	background-color: rgb(76, 80, 80);
-}
-.container>.navbar-collapse>.nav>li>a:hover {
-	color: lightgreen;
-}
-/* / mm */
-
 .navbar-custom .nav li a {
 	color: rgba(255, 255, 255, 0.8);
-  padding: 24px 0px 25px 0px;
+  /*padding: 24px 0px 25px 0px;*/
 	/*border-bottom: 1px solid transparent;*/
-
 	/*font-family: 'Noto Sans', sans-serif;*/
-	/*font-size:12px;*/
+	font-size:12px;
 }
 .navbar-custom .nav li a:hover {
     color: #fff;
@@ -332,6 +315,28 @@ footer { background-color: #e4e4e4;
 MEDIA QUERIES
 ==========================================================================
 */
+@media (max-width: 767px) {
+	.navbar-custom .nav li a {
+		/*color: rgba(255, 255, 255, 0.8);*/
+	  padding: 24px 0px 25px 0px;
+
+	}
+	/* mm Styles for mobile drop down menu */
+	.container>.navbar-collapse>.navbar-nav {
+	    margin: 0.5px -15px;
+	}
+	.container>.navbar-collapse>.nav>li {
+	    border-bottom: 1px solid lightgrey;
+	}
+	.container>.navbar-collapse {
+		background-color: rgb(76, 80, 80);
+	}
+	.container>.navbar-collapse>.nav>li>a:hover {
+		color: lightgreen;
+	}
+	/* / mm */
+
+}
 
 @media (min-width: 768px) {
 	/* branding in nav */
