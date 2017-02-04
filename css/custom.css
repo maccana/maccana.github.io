@@ -1,10 +1,10 @@
 /* Custom CSS styling for Grayscale bootstrap theme */
 
 /* Mobile First */
-/* 
+/*
 ==========================================================================
 DEV UTILITIES
-========================================================================== 
+==========================================================================
 */
 
 .bdred { border: 1px solid red; }
@@ -14,10 +14,10 @@ DEV UTILITIES
 .abs { position: absolute; }
 .rel { position: relative; }
 
-/* 
+/*
 ==========================================================================
 GLOBAL STYLES
-========================================================================== 
+==========================================================================
 */
 
 body {
@@ -25,20 +25,37 @@ body {
 	font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
 }
 
-
 .navbar-custom {
     margin-bottom: 0;
     /*border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
     text-transform: uppercase;
     /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     /*font-family: 'Titillium Web';*/
+		background-color: rgba(0, 0, 0, 0.42);
 }
-.navbar-custom .nav li a { 
+
+/* mm Styles for mobile drop down menu */
+.container>.navbar-collapse>.navbar-nav {
+    margin: 0.5px -15px;
+}
+.container>.navbar-collapse>.nav>li {
+    border-bottom: 1px solid lightgrey;
+}
+.container>.navbar-collapse {
+	background-color: rgb(76, 80, 80);
+}
+.container>.navbar-collapse>.nav>li>a:hover {
+	color: lightgreen;
+}
+/* / mm */
+
+.navbar-custom .nav li a {
 	color: rgba(255, 255, 255, 0.8);
-	border-bottom: 1px solid transparent; 
+  padding: 24px 0px 25px 0px;
+	/*border-bottom: 1px solid transparent;*/
 
 	/*font-family: 'Noto Sans', sans-serif;*/
-	font-size:12px;
+	/*font-size:12px;*/
 }
 .navbar-custom .nav li a:hover {
     color: #fff;
@@ -53,13 +70,13 @@ body {
 
 .navbar-custom .navbar-toggle {
     color: white;
-    background-color: transparent; 
+    background-color: transparent;
     font-size: 21px;
     margin-right: 7px;
 }
 
 .navbar-toggle {
- 
+
     padding: 9px 10px;
 	margin-top: 0px;
     margin-bottom: -2px;
@@ -68,7 +85,7 @@ body {
 
 h1,h2,h3,h4,h5 { color: #333333; /*font-family: 'Titillium Web'*/font-family: 'Lato', sans-serif;font-weight: 300; }
 
-p { 
+p {
 	font-size: 18px;
 	color:#737373;
 	/*font-family: 'Open Sans Condensed', serif;*/
@@ -85,8 +102,8 @@ p {
 /*.content-section p { text-align: center; font-family: 'Open Sans Condensed'; letter-spacing: .3px; }*/
 
 
-.section-title { 
-	border-bottom: 0px solid #ff8c00; 
+.section-title {
+	border-bottom: 0px solid #ff8c00;
 	display: inline-block;
 	padding-bottom: 0px;
 
@@ -106,28 +123,28 @@ hr.small {
 .mchevron-up { font-size: 26px; color: cadetblue; }
 .mchevron-up-text { color:cadetblue;margin-top: 0px }
 
-/* 
+/*
 ==========================================================================
 INTRO
-========================================================================== 
+==========================================================================
 */
 
-header { background:  url('../img/banner-main-large4.jpg') no-repeat bottom center; 
+header { background:  url('../img/banner-main-large4.jpg') no-repeat bottom center;
 z-index: 100;position: relative;text-align: center;
 }
 
 .intro {
-	
+
 	/*padding: 145px 0px;*/
 	min-height: 100vh;
 	/*position: relative;*/
-	
-	
+
+
 }
 
 .intro h1 { color:#f7f7f7; font-family: 'Lato', sans-serif;font-weight:300; }
 .intro .intro-body .brand-heading { font-size: 48px;z-index: 100;
-	
+
  }
 
 .intro .intro-body .intro-text, .brand-heading  {
@@ -140,11 +157,11 @@ z-index: 100;position: relative;text-align: center;
     text-transform: uppercase;
 
     width: 100%;
-	
+
 	/*position: absolute;*/
 	/*z-index: 100000;*/
-  
- 
+
+
 }
 
 
@@ -169,7 +186,7 @@ z-index: 100;position: relative;text-align: center;
   right: 0;
   z-index: -1;
   width:100%;
-  
+
   display: block;
   background-image: url('http://www.ashercharles.com/wp-content/themes/v3/images/banner-main-large4.jpg');
 
@@ -195,12 +212,12 @@ z-index: 100;position: relative;text-align: center;
   left: 0;
   right: 0;
   z-index: -1;
-  
+
   display: block;
   background-image: url('');
   width: 100%;
   height: 800px;
-  
+
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
@@ -221,29 +238,31 @@ z-index: 100;position: relative;text-align: center;
 }*/
 
 
-/* 
+/*
 ==========================================================================
 ABOUT SECTION
-========================================================================== 
+==========================================================================
 */
 
-#about { background-color: rgba(168, 172, 175, 0);
-
+#about { background-color: rgba(10, 39, 62, 0.96); }
+#about .section-title {  color: #91bcc1; }
+#about p {
+	color: #949cb5;
+	font-family: 'Georgia', sans-serif;
+	font-size:large;
+	line-height: 30px
 }
-#about .section-title {  color:#508288; }
-#about p { color: #4d5a82; font-family: 'Georgia', sans-serif;
-font-size:large;
-line-height: 30px }
-/* 
+/*
+
 ==========================================================================
 SKILLS SECTION
-========================================================================== 
+==========================================================================
 */
 #skills { background-color: #e6e4e4; }
-/* 
+/*
 ==========================================================================
-PORTFOLIO SECTION 
-========================================================================== 
+PORTFOLIO SECTION
+==========================================================================
 */
 
 #portfolio { background-color: #eee; }
@@ -252,22 +271,22 @@ PORTFOLIO SECTION
 #portfolio .section-intro p { color:#f7f7f7; }
 #portfolio .section-title { color:rgba(147, 39, 160, 0.67); }
 
-.portfolio-item .caption { 
+.portfolio-item .caption {
 	position: absolute;
 	width:100%;
-	top:0; 
+	top:0;
 	bottom:0;
 	left:0;
 	background-color: transparent;
-	padding:10px; 
+	padding:10px;
 
 }
 
-.caption .fa .fa-plus-circle { 
-	color: #fff; 
+.caption .fa .fa-plus-circle {
+	color: #fff;
 	bottom: 0;
     position: absolute;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 .portfolio-item h3 a { font-size: 18px;color: rgb(227, 255, 120); }
@@ -277,20 +296,20 @@ PORTFOLIO SECTION
 .portfolio-item .tools-list li { list-style: none;display: inline-block;margin-right: 10px; }
 
 
-/* 
+/*
 ==========================================================================
-CONTACT SECTION 
-========================================================================== 
+CONTACT SECTION
+==========================================================================
 */
 
 #contact { padding-bottom: 0px; background-color: #efefef; text-align: center; }
 #contact .section-title { color: #00a6a9; }
 #contact a { color: #8364bf; }
 
-/* 
+/*
 ==========================================================================
-FOOTER SECTION 
-========================================================================== 
+FOOTER SECTION
+==========================================================================
 */
 
 footer { background-color: #e4e4e4;
@@ -308,10 +327,10 @@ footer { background-color: #e4e4e4;
 
 
 
-/* 
+/*
 ==========================================================================
 MEDIA QUERIES
-========================================================================== 
+==========================================================================
 */
 
 @media (min-width: 768px) {
@@ -329,8 +348,8 @@ MEDIA QUERIES
 	}
 	.intro .intro-body .intro-text {
 		font-size: 28px;
-	
-	}	
+
+	}
 
 	.navbar-custom { background-color: transparent; }
 	.navbar-custom.top-nav-collapse {
@@ -341,32 +360,32 @@ MEDIA QUERIES
 	.navbar-custom.top-nav-collapse li a { color:#fff; }
 
 	.footer-content p { font-size: 16px; }
-	.btn-default { 
-		color: #949e9a; 
+	.btn-default {
+		color: #949e9a;
 		border: none;
-		/*border: 1px solid #1b6549;*/ 
+		/*border: 1px solid #1b6549;*/
 	}
 	.btn-default:hover, .btn-default:focus {
-	    border: 0px solid #42DCA3; 
+	    border: 0px solid #42DCA3;
 	    outline: none;
 	    color: #7cd25a;
 	    background-color: transparent;
 	}
 
-	.section-title { 
-		font-size: 45px; 
+	.section-title {
+		font-size: 45px;
 	}
 
 	.portfolio-item { overflow: hidden; }
-	.portfolio-item .caption { 
+	.portfolio-item .caption {
 		font-size: 18px;
 		color:#888585;
 		position: absolute;
-		top:-100%; 
+		top:-100%;
 		background-color: #000;
 		opacity:.7;
-		margin: 0px 0px 0px 0px; 
-		padding:22px; 
+		margin: 0px 0px 0px 0px;
+		padding:22px;
 		width: 100%;
 		height: 100%;
 		-webkit-transition: all 0.5s ease;
@@ -374,8 +393,8 @@ MEDIA QUERIES
 		-o-transition:      all 0.5s ease;
 	}
 
-	/*.portfolio-item .caption { 
-		padding:22px; 
+	/*.portfolio-item .caption {
+		padding:22px;
 		width:100%;
 		height: 100%;
 		position: absolute;
@@ -387,7 +406,7 @@ MEDIA QUERIES
 
 	 }*/
 
-	.portfolio-item .caption { 
+	.portfolio-item .caption {
 		top: -100%;
 		/*right:-100%;*/
 		/*opacity: 0;*/
@@ -405,4 +424,3 @@ MEDIA QUERIES
 	    padding-bottom: 100px;
 	}
 }
-
