@@ -1,0 +1,49 @@
+body {
+    background-color: #5641db;
+    background-image: -webkit-linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
+    background-image: -moz-linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
+    background-image: -o-linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
+    background-image: linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
+    padding-top: 20px;
+}
+#header>h1 {
+    color: rgb(255, 255, 255);
+}
+.jumbotron {
+    background-color: transparent;
+}
+#top-btn {
+    margin-top: 20px;
+    margin-left: 0
+}
+/*#content-wrap {
+    width: 88%;
+    margin: 36px auto
+}*/
+#btn-container {
+    border: 0 solid red;
+    min-height: 65px;
+    text-align: center
+}
+#quote {
+    color: rgba(159, 233, 255, 0.96);
+}
+#phrase {
+    min-height: 280px;
+    background: transparent;
+    color: azure;
+    border: 1px solid rgba(255, 255, 255, 0.21);
+    padding: 80px;
+    border-radius: 8px;
+}
+#phrase small {
+    color: #0B3F43;
+}
+#tweetBtn {
+    padding-top: 30px;
+}
+#top-btn {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.17);
+    border-color: #253e61;
+}

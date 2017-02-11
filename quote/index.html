@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Quote Machine</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="quote.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container" id="content-wrap">
+            <div class="jumbotron">
+                <div class="header" id="header">
+                    <h1 class="text-center" id="title">Quote
+          Machine</h1>
+                </div>
+                <div class="text-center" id="phrase">
+                    <h2 id="quote" class="text-center"></h2>
+                    <h4 id="author" class="text-center">- </h4>
+
+                    <div id="tweetBtn" class="container text-center">
+                        <a href="https://twitter.com/intent/tweet?button_hashtag=mikemacana" class="twitter-share-button" data-size="" data-url="" data-text=""></a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" id="btn-container">
+                        <button class="btn btn-lg btn-success" id="top-btn">Next quote</button>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="quote.js"></script>
+</body>
+
+</html>
