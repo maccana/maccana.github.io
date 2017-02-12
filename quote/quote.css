@@ -37,8 +37,8 @@ body {
     margin-bottom: 20px;
 }
 #phrase {
-    min-height: 230px;
-    max-height: 230px;
+    min-height: 280px;
+    max-height: 280px;
     background: transparent;
     color: azure;
     border: 1px solid rgba(255, 255, 255, 0.21);
@@ -68,7 +68,6 @@ iframe {
     margin: auto;
   }
   #phrase {
-      min-height: 280px;
       padding: 80px;
   }
 }
