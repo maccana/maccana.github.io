@@ -1,10 +1,12 @@
+/* Mobile First */
+
 body {
     background-color: #5641db;
     background-image: -webkit-linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
     background-image: -moz-linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
     background-image: -o-linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
     background-image: linear-gradient(-60deg, #5641db 0%, #1f86ef 100%);
-    padding-top: 20px;
+
 }
 #header>h1 {
     color: rgb(255, 255, 255);
@@ -16,10 +18,13 @@ body {
     margin-top: 20px;
     margin-left: 0
 }
-/*#content-wrap {
-    width: 88%;
-    margin: 36px auto
-}*/
+#content-wrap {
+    /*max-width: 88%;*/
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
 #btn-container {
     border: 0 solid red;
     min-height: 65px;
@@ -27,14 +32,18 @@ body {
 }
 #quote {
     color: rgba(159, 233, 255, 0.96);
+    font-size: 24px;
+    line-height:  30px;
+    margin-bottom: 20px;
 }
 #phrase {
-    min-height: 280px;
+    min-height: 230px;
+    max-height: 230px;
     background: transparent;
     color: azure;
     border: 1px solid rgba(255, 255, 255, 0.21);
-    padding: 80px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 0px;
 }
 #phrase small {
     color: #0B3F43;
@@ -46,4 +55,20 @@ body {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.17);
     border-color: #253e61;
+}
+iframe {
+  height: 0px;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    padding-top: 20px;
+  }
+  #content-wrap {
+    margin: auto;
+  }
+  #phrase {
+      min-height: 280px;
+      padding: 80px;
+  }
 }

@@ -27,6 +27,7 @@ $(document).ready(function() {
 					var tweetBtn = $('<a></a>').addClass('twitter-share-button').attr('href', 'http://twitter.com/share').attr('data-url', 'www.freecodecamp.com').attr('data-text', $('#quote').text() + $('#author').text());
 					$('#tweetBtn').append(tweetBtn);
 					twttr.widgets.load();
+          // $( '#title' ).remove();
 				}
 			}
 		});
