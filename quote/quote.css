@@ -51,7 +51,7 @@ body {
     color: #0B3F43;
 }
 #tweetBtn {
-    padding-top: 30px;
+    padding-top: 18px;
     margin-top: 26px;
 }
 #top-btn {
@@ -78,5 +78,8 @@ iframe {
   }
   #phrase {
       padding: 80px;
+  }
+  #quote {
+      font-size: 30px;
   }
 }
