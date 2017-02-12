@@ -18,9 +18,9 @@ $(document).ready(function() {
 					$('#quote').empty().append(quote.quoteText);
 					if (quote.quoteAuthor == "") {
 						quote.quoteAuthor = "anonymous";
-						$('#author').empty().append("- ", "anon");
+						$('#author').empty().append(" ", "anon");
 					}
-					$('#author').empty().append("- ", quote.quoteAuthor);
+					$('#author').empty().append(" ", quote.quoteAuthor);
 					// Remove existing iframe
 					$('#tweetBtn iframe').remove();
 					// Generate new markup for tweet button widget
@@ -35,7 +35,7 @@ $(document).ready(function() {
 	// Handler for button to get new quote
 	$('#top-btn').on('click', function(ev) {
 		ev.preventDefault();
-		console.log("go get the quote...");
+		console.log("Getting a new quote...");
 		// Call to get quote and append to the relevant DOM elements
 		getQuote();
 	});
