@@ -96,7 +96,7 @@ hr {
 	margin-top: -15px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid rgba(173, 147, 147, 0.64);
+    border-top: 1px solid rgba(4, 53, 58, 0.89)
 }
 hr.small {
     max-width: 100px;
@@ -112,7 +112,7 @@ INTRO
 ==========================================================================
 */
 
-header { background:  url('../img/banner-main-large4.jpg') no-repeat bottom center;
+header { background:  url('http://t.wallpaperweb.org/wallpaper/development/1920x1200/good_morning_Sky_1920x1200.jpg') no-repeat bottom center;
 z-index: 100;position: relative;text-align: center;
 }
 
@@ -241,10 +241,10 @@ ABOUT SECTION
 ==========================================================================
 */
 
-#about { background-color: rgba(71, 89, 103, 0.96); }
-#about .section-title {  color: #91bcc1; }
+#about { background-color: rgba(229, 235, 239, 0.96); }
+#about .section-title {  color: #2e686f; }
 #about p {
-	color: #949cb5;
+	color: #5c678a;
 	font-family: 'Georgia', sans-serif;
 	font-size:large;
 	line-height: 30px
@@ -359,7 +359,7 @@ MEDIA QUERIES
 
 	.intro {
 		height: 100%;
-		padding: 170px 0px;
+		padding: 150px 0px;
 	}
 	.intro .intro-body .brand-heading {
 	    font-size: 70px;
