@@ -1,3 +1,4 @@
-Personal Portfolio Site 
+# Personal portfolio site
 
-# [Start Bootstrap](http://startbootstrap.com/) - [Grayscale](http://startbootstrap.com/template-overviews/grayscale/)
+> Customized from the Bootstrap template 
+[Grayscale](http://startbootstrap.com/template-overviews/grayscale/), sourced from [Start Bootstrap](http://startbootstrap.com/).  
