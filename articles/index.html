@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAO Data Stream API Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Warm Neutrals with Subtle Tech Blue -->
+    <!-- Application Structure Plan: A single-page app with a persistent side-navigation (collapsible on mobile). The nav will control which content section (Intro, Auth, Endpoint, Response, Troubleshooting, Next Steps) is displayed in the main content area. This is better than a long-scrolling page as it mimics a "doc site" feel, making the technical information easy to access. Key interactions: section navigation, and 'copy-to-clipboard' for code blocks. This structure is chosen for clarity and fast, non-linear access to specific technical details. -->
+    <!-- Visualization & Content Choices: Report Info: API Auth (cURL) -> Goal: Inform/Provide Utility -> Viz: HTML <pre> block -> Interaction: Copy-to-clipboard button -> Justification: Allows dev to use the example -> Library/Method: Vanilla JS (clipboard). Report Info: Endpoint Parameters -> Goal: Organize/Inform -> Viz: HTML <table> -> Interaction: None -> Justification: Clear, scannable reference -> Library/Method: HTML/Tailwind. Report Info: Response Structure (JSON) -> Goal: Inform/Provide Utility -> Viz: HTML <pre> block -> Interaction: Copy-to-clipboard button -> Justification: Allows dev to see/use the example payload -> Library/Method: Vanilla JS (clipboard). Report Info: Troubleshooting -> Goal: Inform -> Viz: HTML list/divs -> Interaction: None -> Justification: Easy to read. --- No quantitative data was present in the source report, so no charts (Chart.js/Plotly) were used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+        
+        pre {
+            font-family: 'Roboto Mono', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .nav-link {
+            @apply block w-full text-left px-4 py-2.5 rounded-lg text-gray-700 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-150;
+        }
+        .nav-link.active {
+            @apply bg-blue-600 text-white hover:bg-blue-700 hover:text-white;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-white p-6 border-r border-gray-200 hidden md:block flex-shrink-0">
+            <h1 class="text-xl font-bold text-blue-700 mb-8">DAO Data Stream API</h1>
+            <nav class="space-y-2">
+                <button data-target="intro" class="nav-link active">🚀 Quick Start</button>
+                <button data-target="auth" class="nav-link">1. Authentication</button>
+                <button data-target="endpoint" class="nav-link">2. Core Endpoint</button>
+                <button data-target="response" class="nav-link">3. Response Structure</button>
+                <button data-target="troubleshooting" class="nav-link">4. Troubleshooting</button>
+                <button data-target="next-steps" class="nav-link">Conclusion</button>
+            </nav>
+        </aside>
+
+        <!-- Mobile Header & Navigation -->
+        <header class="md:hidden w-full bg-white p-4 border-b border-gray-200 sticky top-0 z-10">
+            <div class="flex justify-between items-center">
+                <h1 class="text-lg font-bold text-blue-700">DAO Data Stream API</h1>
+                <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+            <nav id="mobile-menu" class="hidden mt-4 space-y-1">
+                <button data-target="intro" class="nav-link active">🚀 Quick Start</button>
+                <button data-target="auth" class="nav-link">1. Authentication</button>
+                <button data-target="endpoint" class="nav-link">2. Core Endpoint</button>
+                <button data-target="response" class="nav-link">3. Response Structure</button>
+                <button data-target="troubleshooting" class="nav-link">4. Troubleshooting</button>
+                <button data-target="next-steps" class="nav-link">Conclusion</button>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6 md:p-10 max-w-full">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Section: Intro -->
+                <section id="intro" class="content-section active space-y-6">
+                    <h2 class="text-3xl font-bold border-b pb-2">Quick Start: Integrating the DAO Data Stream API</h2>
+                    <p class="text-lg text-gray-700">This guide helps you get authenticated and make your first successful API call to retrieve governance data.</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                        <p class="text-blue-800">This interactive page is a demonstration of how a static Markdown document can be transformed into a dynamic, user-friendly web application. All content is sourced from the API guide.</p>
+                    </div>
+                </section>
+
+                <!-- Section: Authentication -->
+                <section id="auth" class="content-section space-y-6">
+                    <h2 class="text-3xl font-bold border-b pb-2">1. Authentication (API Key)</h2>
+                    <p class="text-lg text-gray-700">The API requires a single <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">Authorization</code> header containing your API Key, prefixed with the <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">Bearer</code> scheme. Your key is obtained from the developer dashboard.</p>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Example Request using cURL</h3>
+                        <div class="relative bg-gray-900 text-gray-100 p-4 rounded-lg">
+                            <button class="copy-btn absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-2 rounded" data-clipboard-target="#curl-code">Copy</button>
+                            <pre id="curl-code" class="text-sm">curl -X GET 'https://api.daostream.io/v1/proposals' \
+  -H 'Authorization: Bearer sk_live_ABC123DEF456'</pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Core Endpoint -->
+                <section id="endpoint" class="content-section space-y-6">
+                    <h2 class="text-3xl font-bold border-b pb-2">2. The Core Endpoint</h2>
+                    <p class="text-lg text-gray-700">The primary resource for governance data is the <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">/v1/proposals</code> endpoint. This returns a paginated list of all active or recently concluded votes.</p>
+                    
+                    <div class="overflow-x-auto bg-white rounded-lg border">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Parameter</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Required</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap"><code class="text-sm text-pink-600">chain</code></td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><code class="text-sm text-blue-600">string</code></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">No</td>
+                                    <td class="px-6 py-4 text-sm text-gray-700">Filters results by blockchain network (e.g., <code class="text-xs bg-gray-100 px-1 rounded">ethereum</code>, <code class="text-xs bg-gray-100 px-1 rounded">polygon</code>).</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap"><code class="text-sm text-pink-600">limit</code></td>
+                                    <td class="px-6 py-4 whitespace-nowrap"><code class="text-sm text-blue-600">integer</code></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">No</td>
+                                    <td class="px-6 py-4 text-sm text-gray-700">Maximum number of results per page (default is 20, max is 100).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Section: Response Structure -->
+                <section id="response" class="content-section space-y-6">
+                    <h2 class="text-3xl font-bold border-b pb-2">3. Response Structure Example</h2>
+                    <p class="text-lg text-gray-700">A successful response (<code class="bg-green-100 text-green-800 px-1 py-0.5 rounded">HTTP 200</code>) returns a JSON object containing the <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">data</code> array of proposal objects, along with status metadata.</p>
+
+                    <div>
+                        <div class="relative bg-gray-900 text-gray-100 p-4 rounded-lg">
+                            <button class="copy-btn absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white text-xs font-medium py-1 px-2 rounded" data-clipboard-target="#json-code">Copy</button>
+                            <pre id="json-code" class="text-sm">{
+  "status": "success",
+  "data": [
+    {
+      "proposal_id": "P-4567",
+      "dao_name": "Decentralized Governance Fund",
+      "status": "Active",
+      "votes_for": 1200000,
+      "end_date": "2025-11-15T12:00:00Z"
+    },
+    {
+      "proposal_id": "P-4566",
+      "dao_name": "Protocol Treasury DAO",
+      "status": "Passed",
+      "votes_for": 450000,
+      "end_date": "2025-10-25T18:00:00Z"
+    }
+  ]
+}</pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Troubleshooting -->
+                <section id="troubleshooting" class="content-section space-y-6">
+                    <h2 class="text-3xl font-bold border-b pb-2">4. Troubleshooting</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg border">
+                            <p class="font-semibold text-lg"><code class="bg-red-100 text-red-800 px-2 py-0.5 rounded">401 Unauthorized</code></p>
+                            <p class="text-gray-700 mt-1">Check that your API key is correct and included in the <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">Authorization: Bearer &lt;key&gt;</code> header format.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border">
+                            <p class="font-semibold text-lg"><code class="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">400 Bad Request</code></p>
+                            <p class="text-gray-700 mt-1">This usually means a query parameter is misspelled or has an invalid value (e.g., <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">limit=500</code> when the max is 100).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Next Steps -->
+                <section id="next-steps" class="content-section space-y-6">
+                    <h2 class="text-3xl font-bold border-b pb-2">Conclusion and Next Steps</h2>
+                    <p class="text-lg text-gray-700">You've successfully established communication with the API! The next step in building your app is to implement client-side filtering and data visualization using the <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">status</code> and <code class="bg-gray-200 text-gray-800 px-1 py-0.5 rounded">votes_for</code> fields.</p>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification for Copy -->
+    <div id="copy-toast" class="fixed bottom-10 right-10 bg-green-600 text-white px-5 py-3 rounded-lg shadow-xl transition-opacity duration-300 opacity-0 transform translate-y-2">
+        Copied to clipboard!
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            const copyToast = document.getElementById('copy-toast');
+
+            function showSection(targetId) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                const targetSection = document.getElementById(targetId);
+                if(targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.target === targetId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                if (window.innerWidth < 768) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.dataset.target;
+                    showSection(targetId);
+                    
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetSelector = button.dataset.clipboardTarget;
+                    const targetElement = document.querySelector(targetSelector);
+                    
+                    if (targetElement) {
+                        const textToCopy = targetElement.innerText;
+                        
+                        const tempTextarea = document.createElement('textarea');
+                        tempTextarea.value = textToCopy;
+                        document.body.appendChild(tempTextarea);
+                        tempTextarea.select();
+                        try {
+                            document.execCommand('copy');
+                            showToast();
+                        } catch (err) {
+                            console.error('Failed to copy text: ', err);
+                        }
+                        document.body.removeChild(tempTextarea);
+                    }
+                });
+            });
+
+            function showToast() {
+                copyToast.classList.remove('opacity-0', 'translate-y-2');
+                copyToast.classList.add('opacity-100', 'translate-y-0');
+
+                setTimeout(() => {
+                    copyToast.classList.remove('opacity-100', 'translate-y-0');
+                    copyToast.classList.add('opacity-0', 'translate-y-2');
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
